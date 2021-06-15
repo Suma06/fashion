@@ -1,0 +1,177 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE-edge">
+<meta name="viewport" content="width=device-width, intial-scale=1.0">
+<title>  Fashionn</title>
+<!--stylesheet----------->
+<link rel="stylesheet" href="css/stylenav.css"/>
+<!--fav-icon-------------->
+<link rel="shortcut icon" href="images/f_logo.jpg">
+<!--poppins-font----------->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<!--using-font-awesome-------------->
+<script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!--navigation-------------------->
+    <nav id="navigation">
+        <!--logo------------>
+        <div class="logo"><span style="color:crimson;">Fa</span><span style="color:Orange">sh</span><span style="color:mediumvioletred">io</span ><span style="color:skyblue">nn</span><span><i class="fa fa-pagelines" aria-hidden="true" style="color:rgb(27,150,91)"></i></span></div>
+        <!--menu-btn------->
+        <input type="checkbox" class="menu-btn" id="menu-btn">
+        <label for="menu-btn" class="menu-icon">
+            <span class="nav-icon"></span>
+        </label>
+        <!--menu------------->
+        <ul class="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">New Arrivals</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <!--sign-up-btn----->
+        <a href="#" class="sign-up-btn">
+            Sign Up
+            <!--icon-->
+            <i class="fas fa-chevron-right"></i>
+        </a>
+         <!--nav-2------------------>
+        <nav class="nav-2">
+            <!--menu------->
+            <ul class="menu-2">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">New Arrivals</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <!--sign-up-btn-2--->
+        
+        <a href="#" class="sign-up-btn-2">
+            Sign Up
+            <!--icon-->
+            <i class="fas fa-chevron-right"></i>
+        </a>
+        </nav>
+    </nav>
+    <header>
+        <section>
+            <div class="intro_box">
+             <p><span>STAY</span> In<span>  STAY</span> Stylish</p>  
+             <h2 >The Latest Drops</h2><br>
+             <div class="btn" >
+                  <button >New Arrivals  <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
+                 <div clas="bg"></div>
+                 <div class="bg-gradient"></div>
+             </div>
+             </div>
+        </section>
+    </header>
+    <!--new arrivals---------------------------------------->
+    <div class="newarr">
+        <br>
+        <br>
+        <br>
+    <div class="new_arrivals">
+
+         <div class="slide active">
+              <img src="images/slider_1.jpeg" alt="">
+         </div>
+         <div class="slide">
+              <img src="images/slider_2.jpeg" alt="">
+         </div>
+         <div class="slide">
+              <img src="images/slider_3.jpeg" alt="">
+         </div>
+         <div class="slide">
+           <img src="images/slider_4.jpeg" alt="">
+         </div>
+         <div class="slide">
+              <img src="images/slider_5.jpeg" alt="">
+         </div>
+         <div class="slide">
+              <img src="images/slider_6.jpeg" alt="">
+         </div>
+         <div class="slide">
+            <img src="images/slider_7.jpeg" alt="">
+         </div>
+         <div class="navig">
+             <div class="bttn active"></div>
+             <div class="bttn"></div>
+             <div class="bttn"></div>
+             <div class="bttn"></div>
+             <div class="bttn"></div>
+             <div class="bttn"></div>
+             <div class="bttn"></div>
+         </div>
+   </div>
+    </div>
+   <script type="text/javascript">
+      var slides = document.querySelectorAll('.slide');
+      var btns = document.querySelectorAll('.bttn');
+      let currentSlide = 1;
+        // Javascript for image slider manual navigation
+      var manualNav = function(manual){
+        slides.forEach((slide) => {
+          slide.classList.remove('active');
+  
+          btns.forEach((btn) => {
+            btn.classList.remove('active');
+          });
+        });
+  
+        slides[manual].classList.add('active');
+        btns[manual].classList.add('active');
+      }
+  
+      btns.forEach((btn, i) => {
+        btn.addEventListener("click", () => {
+          manualNav(i);
+          currentSlide = i;
+        });
+      });
+  
+      // Javascript for image slider autoplay navigation
+      var repeat = function(activeClass){
+        let active = document.getElementsByClassName('active');
+        let i = 1;
+  
+        var repeater = () => {
+          setTimeout(function(){
+            [...active].forEach((activeSlide) => {
+              activeSlide.classList.remove('active');
+            });
+  
+          slides[i].classList.add('active');
+          btns[i].classList.add('active');
+          i++;
+  
+          if(slides.length == i){
+            i = 0;
+          }
+          if(i >= slides.length){
+            return;
+          }
+          repeater();
+        }, 10000);
+        }
+        repeater();
+      }
+      repeat();
+    </script>
+    <script>
+        // When the user scrolls down 20px from the top of the document, slide down the navbar
+        window.onscroll = function() {scrollFunction()};
+        
+        function scrollFunction() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("navigation").style.backgroundColor = "black";
+          } else {
+            document.getElementById("navigation").style.backgroundColor = "transparent";
+          }
+        }
+        </script>
+</body>
+</html>
