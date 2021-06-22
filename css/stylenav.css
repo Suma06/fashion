@@ -3,6 +3,7 @@ body{
     margin: 0px;
     padding: 0px;
     font-family: 'Montserrat', sans-serif;
+    background:#d8d8d8;
 }
 ul{
     list-style: none;
@@ -22,24 +23,19 @@ a{
     display:flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 30px;
+    padding:10px 10px;
     background-image: linear-gradient(180deg, transparent 40vw, transparent);
 }
 .logo{
-    height: 24px;
+    padding: 5px;
+    height: 6.3vw;
     z-index: 2;
-    font-size: 30px;
-  
-}
-.logo span{
-    font-family:'Dancing Script', cursive;
-    display:inline-flexbox;
-    background-color: white;
-
+    font-size: 30px; 
 }
 
 .logo img{
     height: 100%;
+    max-width:100%;
     object-fit: contain;
     object-position: center;
 }
@@ -53,23 +49,54 @@ a{
     padding: 20px;
 }
 .menu li a{
-    color: white;
+    color:rgb(80,80,80);
+    font: weight 550px;
+    font-size:1.5vw;
+   
+}
+.menu li a,.sign-up-btn, .sign-up-btn-2
+{
+    text-decoration: none;
+    transition: all ease-in-out 250ms;    
+}
+.menu li a:hover, .sign-up-btn:hover
+{
+    color:tomato;
+}
+.menu li a::after, .sign-up-btn::after
+{
+    content: "";
+    position: absolute;
+    display: block;
+    height: .3vw;
+    width: 0%;
+    background-color: teal;
+    bottom: 1em;
+    transition: all ease-in-out 250ms;
+
+}
+.menu li a:hover::after, .sign-up-btn:hover::after{
+    width:5%;
 }
 .sign-up-btn,
 .sign-up-btn-2{
-    color:gold;
+    text-decoration: none;
+    font-weight: bold;
+    font-size:1.5vw;
+    color:rgb(80,80,112);
 }
 .sign-up-btn i,
 .sign-up-btn-2 i{
     margin-left: 4px;
 }
-.menu li a:hover,
+
 .menu-2 li a:hover
 {
+    text-decoration:none;
     color: #17ffa6;
     transition: all ease 0.5s;
 }
-.sign-up-btn:hover,
+
 .sign-up-btn-2:hover{
     color: #0ab372;
     transition: all ease 0.5s;
@@ -103,7 +130,7 @@ a{
         z-index: 2;
     }
     nav .menu-icon .nav-icon{
-        background-color: #ffffffcc;
+        background-color:black;
         display: block;
         height: 2px;
         position: relative;
@@ -112,7 +139,7 @@ a{
     }
     nav .menu-icon .nav-icon:before,
     nav .menu-icon .nav-icon:after{
-        background-color: #ffffffcc;
+        background-color:black;
         content: '';
         display: block;
         height: 100%;
@@ -148,7 +175,7 @@ a{
         top: 0px;
         width:100%;
         height:100%;
-        background:linear-gradient(grey,black);
+        background:white;
         flex-direction: column;
         justify-content: center;
         padding-left: 40px;
@@ -164,7 +191,7 @@ a{
     }
     
     .menu-2 li a{
-        color: #fff;
+        color: black;
         margin: 0px;
         padding: 20px 0px;
         font-size: 30px;
@@ -181,6 +208,19 @@ a{
     }
 
 }
+@media (max-width:768px){
+    .logo {
+        width:20vw;
+        height:20vw;
+        }
+}
+@media (max-width:320px){
+    .logo {
+        width:20vw;
+        height:20vw;
+        margin:0px;
+    }
+}
 @keyframes fade{
     0%{
         opacity: 0;
@@ -196,10 +236,13 @@ header{
     background-size: 100%;
     background-repeat: no-repeat;
     width:100%;
-    height: 50vw;
+    min-height: 50vw;
     position:relative;
     justify-content:center;
     align-items:center;
+}
+@media screen and (max-width:425px){
+
 }
 /*---------------------box-------------*/
 section
@@ -224,7 +267,7 @@ section .intro_box:before{
     margin-top:10vw;
     position:relative;
    max-width:100%;
-    height:25vw;
+    min-height:25vw;
     padding:5% 5% 10%;
     box-shadow: 10px 5px 10px black;
     overflow:hidden;
@@ -234,7 +277,7 @@ section .intro_box:before{
     position:relative;
     margin-top:1vw;
     padding:0;
-    font-size:2vw;
+    font-size:25px;
     z-index:2;
     font-weight: bold;
 }
@@ -242,7 +285,7 @@ section .intro_box:before{
     position:relative;
     margin:0;
     padding:0;
-    font-size:2.5vw;
+    font-size:25px;
     color:red;
     z-index:2;
     font-family: 'Viaoda Libre', cursive;
@@ -251,7 +294,7 @@ section .intro_box:before{
     position:relative;
     margin:0;
     padding:0;
-    font-size:2.5vw;
+    font-size:20px;
     color:rgb(50, 50, 90);
     z-index:2;
     font-family: 'Montserrat', sans-serif;
@@ -269,10 +312,14 @@ section .intro_box:before{
     position:absolute;
     max-width:100%;
     height:50%;
-    font-size:1vw;
+    font-size:15px;
     background:white;
+    height:auto;
+    padding-top:5px;
+    padding-bottom:5px;
     border: 1.5px solid black;
     border-radius:8px;
+    display:block;
     color:black;
     cursor:pointer;
     transition:all .4s;
@@ -284,108 +331,91 @@ section .intro_box:before{
     border:none;
     background:linear-gradient(to right,red,rgb(119, 29, 44),darkblue);
 }
-/*------------Image  Slider/New Arrivals----------------*/
-.newarr{
-    background:url(../images/back1.jfif);
-    height:49vw;
-}
-.new_arrivals{
-    position: relative;  
-    max-width: 50%;
-    height: 5vw;
-    margin-left:10vw;
-    background: #1D212B;
+/*-------------------CountUp------------------------------*/
+.count{
+    background: black;
+    opacity:0.8;
+    background-position:top-center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width:100%;
+    height: auto;
+    position:relative;
+    justify-content:center;
     align-items:center;
-  }
-  
-  .new_arrivals .slide{
-    z-index: 1;
-    position: absolute;
-    width: 100%;
-    clip-path: circle(0% at 0 50%);
-  }
-  
-  .new_arrivals .slide.active{
-    clip-path: circle(150% at 0 50%);
-    transition: 2s;
-    transition-property: clip-path;
-  }
-  
-  .new_arrivals .slide img{
-    z-index: 1;
-    width: 100%;
-    height:42vw;
-    border-radius: 5px;
-  }
-  
-   .new_arrivals .navig{
-    z-index: 2;
-    position: absolute;
+}
+.counter-up{
+    background: black  no-repeat;
+    min-height: 50vh;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 0 50px;
+    position: relative;
     display: flex;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
+    align-items: center;
   }
-  
-  .new_arrivals .navig .bttn{
-    background:gold;
-    width: 12px;
-    height: 12px;
-    margin: 10px;
-    border-radius: 50%;
-    cursor: pointer;
+  .counter-up::before{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.8);
   }
-  
-  .new_arrivals .navig .bttn.active{
-    background: #2696E9;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  .counter-up .content{
+    z-index: 1;
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
   }
-  
-  @media (max-width: 820px){
-    .new_arrivals{
-      width: 600px;
-      height:375px;
-     
-    }
-  
-    .new_arrivals .navig{
-      bottom: 25px;
-    }
-  
-    .new_arrivals .navig .bttn{
-      width: 10px;
-      height: 10px;
-      margin: 8px;
-    }
+  .counter-up .content .box{
+    border: 2px dashed rgba(255,255,255,0.6);
+    width: calc(25% - 30px);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding: 20px;
   }
-  
-  @media (max-width: 620px){
-    .new_arrivals{
-      width: 400px;
-      height: 250px;
-     
-    }
-  
-    .new_arrivals .navig{
-      bottom: 15px;
-    }
-  
-    .new_arrivals .navig .bttn{
-      width: 8px;
-      height: 8px;
-      margin: 6px;
-    }
+  .content .box .icon{
+    font-size: 48px;
+    color: #e6e6e6;
   }
-  
-  @media (max-width: 420px){
-    .new_arrivals{
-      width: 320px;
-      height: 200px;
-     }
-  
-    .new_arrivals .navig{
-      bottom: 10px;
+  .content .box .counter{
+    font-size: 50px;
+    font-weight: 500;
+    color: #f2f2f2;
+    font-family: sans-serif;
+  }
+  .content .box .text{
+    font-weight: 400;
+    color: #ccc;
+  }
+  @media screen and (max-width: 1036px) {
+    .counter-up{
+      padding: 50px 50px 0 50px;
+    }
+    .counter-up .content .box{
+      width: calc(50% - 30px);
+      margin-bottom: 50px;
     }
   }
-
-
+  @media screen and (max-width: 580px) {
+    .counter-up .content .box{
+      width: 100%;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    .wrapper{
+      padding: 20px;
+    }
+    .counter-up{
+      padding: 30px 20px 0 20px;
+    }
+  }
