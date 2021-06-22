@@ -241,9 +241,7 @@ header{
     justify-content:center;
     align-items:center;
 }
-@media screen and (max-width:425px){
 
-}
 /*---------------------box-------------*/
 section
 {
@@ -272,6 +270,11 @@ section .intro_box:before{
     box-shadow: 10px 5px 10px black;
     overflow:hidden;
     color:black;
+}
+@media screen and (min-width:768px){
+.intro_box{
+    height:20vw;
+}
 }
 .intro_box p{
     position:relative;
