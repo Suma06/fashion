@@ -1,0 +1,234 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name ="HandheldFriendly" content="true">
+        <title>  Fashionn-Products</title>
+        <!--stylesheet----------->
+        <link rel="stylesheet" href="css/stylenav.css"/>
+        <link rel="stylesheet" href="css/style_arrival.css"/>
+        <link rel="stylesheet" href="css/style_produc.css"/>
+        <!--fav-icon-------------->
+        <link rel="shortcut icon" href="images/storelogo.jpeg">
+        <!--poppins-font----------->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap" rel="stylesheet">
+        <!--using-font-awesome-------------->
+        <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+        <!------Footer----------->
+        <!--bootstrap--------------------------->
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    </head>
+    <body>
+
+     <!--navigation-------------------->
+     <nav id="navigation">
+        <!--logo------------>
+        <div class="logo"><a href="index.html"><img src="images/flogo.png"></a></div>
+        <!--menu-btn------->
+        <input type="checkbox" class="menu-btn" id="menu-btn">
+        <label for="menu-btn" class="menu-icon">
+            <span class="nav-icon"></span>
+        </label>
+        <!--menu------------->
+        <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="arrival.html">Arrivals</a></li>
+            <li><a href="produc.html">Products</a></li>
+            <li><a href="contac.html">Contact</a></li>
+        </ul>
+        <!--sign-up-btn----->
+        <a href="signin.html" class="sign-up-btn">
+            Sign Up
+            <!--icon-->
+            <i class="fas fa-chevron-right"></i>
+        </a>
+         <!--nav-2------------------>
+        <nav class="nav-2">
+            <!--menu------->
+            <ul class="menu-2">
+                <li><a href="index.html">Home</a></li>
+                 <li><a href="arrival.html">Arrivals</a></li>
+                <li><a href="produc.html">Products</a></li>
+                <li><a href="contac.html">Contact</a></li>
+            </ul>
+            <!--sign-up-btn-2--->
+        
+        <a href="signin.html" class="sign-up-btn-2">
+            Sign Up
+            <!--icon-->
+            <i class="fas fa-chevron-right"></i>
+        </a>
+        </nav>
+    </nav>
+     <!--New Arrivals--------------------------------->
+     <div class="newarr">
+        <br>
+        <br>
+        <br>
+    <div class="new_arrivals">
+
+         <div class="slide active">
+              <img src="images/slide_5.jpeg" alt="">
+         </div>
+         <div class="slide">
+             <img src="images/slide_2.jpeg" alt="">
+         </div>
+         <div class="slide">
+              <img src="images/slide_3.jpeg" alt="">
+         </div>
+         <div class="slide">
+              <img src="images/slide_6.jpeg" alt="">
+         </div>
+         <div class="slide">
+            <img src="images/slide_4.jpeg" alt="">
+         </div>
+         <div class="navig">
+             <div class="bttn active"></div>
+             <div class="bttn"></div>
+             <div class="bttn"></div>
+             <div class="bttn"></div>
+             <div class="bttn"></div>
+         </div>
+   </div>
+  </div>
+   <div class="nar">
+     <div class="wrapper">
+      <h1>NEW ARRIVALS</h1>
+      <div class="img-area">
+      <div class="single-img">
+      <img src="images/tops&tees/redmain.webp" alt=""></div>
+      <div class="single-img">
+      <img src="images/tops&tees/bluemain.webp" alt=""></div>
+      <div class="single-img">
+      <img src="images/jeans&jeggings/pinksuit.webp" alt=""></div>
+      <div class="single-img">
+      <img src="images/jeans&jeggings/blackjeansmain.webp" alt=""></div>
+      <div class="single-img">
+      <img src="images/kurtis/blackmain.webp" alt=""></div>
+      <div class="single-img">
+      <img src="images/kurtis/deepbluemain.webp" alt=""></div>
+      <div class="single-img">
+      <img src="images/Footwear/holemain.jpg" alt=""></div>
+      <div class="single-img">
+      <img src="images/Footwear/cemetmain.webp" alt=""></div>
+      <div class="single-img">
+      <img src="images/accessories/beltwatchmain.webp" alt=""></div>
+      <div class="single-img">
+      <img src="images/accessories/braceletmain.webp" alt=""></div>
+      </div>
+      </div>
+      
+   </div>
+   
+   <script type="text/javascript">
+      var slides = document.querySelectorAll('.slide');
+      var btns = document.querySelectorAll('.bttn');
+      let currentSlide = 1;
+        // Javascript for image slider manual navigation
+      var manualNav = function(manual){
+        slides.forEach((slide) => {
+          slide.classList.remove('active');
+  
+          btns.forEach((btn) => {
+            btn.classList.remove('active');
+          });
+        });
+  
+        slides[manual].classList.add('active');
+        btns[manual].classList.add('active');
+      }
+  
+      btns.forEach((btn, i) => {
+        btn.addEventListener("click", () => {
+          manualNav(i);
+          currentSlide = i;
+        });
+      });
+  
+      // Javascript for image slider autoplay navigation
+      var repeat = function(activeClass){
+        let active = document.getElementsByClassName('active');
+        let i = 1;
+  
+        var repeater = () => {
+          setTimeout(function(){
+            [...active].forEach((activeSlide) => {
+              activeSlide.classList.remove('active');
+            });
+  
+          slides[i].classList.add('active');
+          btns[i].classList.add('active');
+          i++;
+  
+          if(slides.length == i){
+            i = 0;
+          }
+          if(i >= slides.length){
+            return;
+          }
+          repeater();
+        }, 5000);
+        }
+        repeater();
+      }
+      repeat();
+    </script>
+    <script>
+        // When the user scrolls down 20px from the top of the document, slide down the navbar
+        window.onscroll = function() {scrollFunction()};
+        
+        function scrollFunction() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("navigation").style.backgroundColor = "white";
+          } else {
+            document.getElementById("navigation").style.backgroundColor = "transparent";
+          }
+        }
+        </script>
+        <!----------------------Footer------------>
+        <footer id="myFooter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3">
+                         <a href="index.html"><h2 style="font-family: 'Viaoda Libre', cursive;">Fashionn</h2> </a>
+                    </div>
+                    <div class="col-sm-2">
+                        <h5>Get started</h5>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="#">Sign up</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-2">
+                        <h5>About us</h5>
+                        <ul>
+                            <li><a href="contac.html">Contact us</a></li>
+                            <li><a href="#">Reviews</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-2">
+                        <h5>Support</h5>
+                        <ul>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Help desk</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="social-networks">
+                            <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                            <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                            <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
+                        </div>
+                        <button type="button" class="btn btn-default">Contact us</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>© Designed By Suma Sri & Madhuri </p>
+            </div>
+        </footer>
+</body>
+</html>

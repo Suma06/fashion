@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name ="HandheldFriendly" content="true">
+<title>  Fashionn</title>
+<!--stylesheet----------->
+<link rel="stylesheet" href="css/style_signin.css"/>
+<link rel="stylesheet" href="css/stylenav.css"/>
+
+<link rel="stylesheet" href="css/style_produc.css"/>
+<!--fav-icon-------------->
+<link rel="shortcut icon" href="images/storelogo.jpeg">
+<!--font----------->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<!--using-font-awesome-------------->
+<script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+ <!--bootstrap--------------------------->
+ <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+    <!--navigation-------------------->
+    <nav id="navigation">
+        <!--logo------------>
+        <div class="logo"><a href="index.html"><img src="images/flogo.png"></a></div>
+        <!--menu-btn------->
+        <input type="checkbox" class="menu-btn" id="menu-btn">
+        <label for="menu-btn" class="menu-icon">
+            <span class="nav-icon"></span>
+        </label>
+        <!--menu------------->
+        <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="arrival.html">Arrivals</a></li>
+            <li><a href="produc.html">Products</a></li>
+            <li><a href="contac.html">Contact</a></li>
+        </ul>
+        <!--sign-up-btn----->
+        <a href="signin.html" class="sign-up-btn">
+            Sign Up
+            <!--icon-->
+            <i class="fas fa-chevron-right"></i>
+        </a>
+        <!--nav-2------------------>
+        <nav class="nav-2">
+            <!--menu------->
+            <ul class="menu-2">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="arrival.html">Arrivals</a></li>
+                <li><a href="produc.html">Products</a></li>
+                <li><a href="contac.html">Contact</a></li>
+            </ul>
+            <!--sign-up-btn-2--->
+            <a href="signin.html" class="sign-up-btn-2">
+                Sign Up
+                <!--icon-->
+                <i class="fas fa-chevron-right"></i>
+            </a>
+        </nav>
+    </nav>
+    <div id="login">
+        <div class="login-wrap">
+            <div class="login-html">
+                <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+                <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+                <div class="login-form">
+                    <form>
+                    <div class="sign-in-htm">
+                        <div class="group">
+                            <label for="user" class="label">Username</label>
+                            <input id="user" type="text" class="input" required>
+                        </div>
+                        <div class="group">
+                            <label for="pass" class="label">Password</label>
+                            <input id="pass" type="password" class="input" data-type="password" required>
+                        </div>
+                        <div class="group">
+                            <input id="check" type="checkbox" class="check" checked>
+                            <label for="check"><span class="icon"></span> Keep me Signed in</label>
+                        </div>
+                        <div class="group">
+                            <input type="submit" class="button" value="Sign In" onclick="showThankYou()">
+                        </div>
+                    </form>
+                        <div class="hr"></div>
+                        <div class="foot-lnk">
+                            <a href="#forgot">Forgot Password?</a>
+                        </div>
+                    </div>
+                    <div class="sign-up-htm">
+                        <form>
+                        <div class="group">
+                            <label for="user" class="label">Username</label>
+                            <input id="user" type="text" class="input" required>
+                        </div>
+                        <div class="group">
+                            <label for="pass" class="label">Password</label>
+                            <input id="pass" type="password" class="input" data-type="password" required>
+                        </div>
+                        <div class="group">
+                            <label for="pass" class="label">Repeat Password</label>
+                            <input id="pass" type="password" class="input" data-type="password" required>
+                        </div>
+                        <div class="group">
+                            <label for="pass" class="label">Email Address</label>
+                            <input id="pass" type="text" class="input" required>
+                        </div>
+                        <div class="group">
+                            <input type="submit" class="button" value="Sign Up">
+                        </div>
+                        </form>
+                        <div class="hr"></div>
+                        <div class="foot-lnk">
+                            <label for="tab-1">Already Member?</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <!----------------------Footer------------>
+    <footer id="myFooter">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                     <a href="index.html"><h2 style="font-family: 'Viaoda Libre', cursive;">Fashionn</h2> </a>
+                </div>
+                <div class="col-sm-2">
+                    <h5>Get started</h5>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">Sign up</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2">
+                    <h5>About us</h5>
+                    <ul>
+                        <li><a href="#">Contact us</a></li>
+                        <li><a href="#">Reviews</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2">
+                    <h5>Support</h5>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Help desk</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <div class="social-networks">
+                        <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                        <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
+                    </div>
+                    <button type="button" class="btn btn-default">Contact us</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>© Designed By Suma Sri & Madhuri </p>
+        </div>
+    </footer>
+    <script>
+        const signUpButton = document.getElementById('signUp');
+        const signInButton = document.getElementById('signIn');
+        const container = document.getElementById('container');
+        signUpButton.addEventListener('click', () => {
+	    container.classList.add("right-panel-active");
+        });
+        signInButton.addEventListener('click', () => {
+	    container.classList.remove("right-panel-active");
+});
+    </script>
+    <script>
+function showThankYou()
+{
+    var nam=$("#user").val();
+    var passw=$("#pass").val();
+    if(nam!=''&& passw!= ''){
+        alert('You are signed in Successfully');
+    }
+
+}
+    </script>
+     <script>
+        // When the user scrolls down 20px from the top of the document, slide down the navbar
+         window.onscroll = function() {scrollFunction()};
+         
+         function scrollFunction() {
+           if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+             document.getElementById("navigation").style.backgroundColor = "white";
+           } else {
+             document.getElementById("navigation").style.backgroundColor = "transparent";
+           }
+         }
+         </script>
+    </body>
+    </html>
