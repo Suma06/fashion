@@ -1,0 +1,426 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Work+Sans&family=Dancing+Script:wght@700&family=Viaoda+Libre&display=swap');
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Montserrat', sans-serif;
+    background:#d8d8d8;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+*{
+    box-sizing: border-box;
+}
+
+#navigation{
+    position:fixed;
+    width:100%;
+	height:6.5vw;
+	z-index:25;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:10px 10px;
+    background-image: linear-gradient(180deg, transparent 40vw, transparent);
+}
+.logo{
+    padding: 5px;
+    height: 6.3vw;
+    z-index: 2;
+    font-size: 30px; 
+}
+
+.logo img{
+    height: 100%;
+    max-width:100%;
+    object-fit: contain;
+    object-position: center;
+}
+.menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+}
+.menu li{
+    padding: 20px;
+}
+.menu li a{
+    color:rgb(80,80,80);
+    font: weight 550px;
+    font-size:1.5vw;
+   
+}
+
+  
+.menu li a,.sign-up-btn, .sign-up-btn-2
+{
+    text-decoration: none;
+    transition: all ease-in-out 250ms;    
+}
+.menu li a:hover, .sign-up-btn:hover
+{
+    color:tomato;
+}
+.menu li a::after, .sign-up-btn::after
+{
+    content: "";
+    position: absolute;
+    display: block;
+    height: .3vw;
+    width: 0%;
+    background-color: teal;
+    bottom: 1em;
+    transition: all ease-in-out 250ms;
+
+}
+.menu li a:hover::after, .sign-up-btn:hover::after{
+    width:5%;
+}
+.sign-up-btn,
+.sign-up-btn-2{
+    text-decoration: none;
+    font-weight: bold;
+    font-size:1.5vw;
+    color:rgb(80,80,112);
+}
+.sign-up-btn i,
+.sign-up-btn-2 i{
+    margin-left: 4px;
+}
+
+.menu-2 li a:hover
+{
+    text-decoration:none;
+    color: #17ffa6;
+    transition: all ease 0.5s;
+}
+
+.sign-up-btn-2:hover{
+    color: #0ab372;
+    transition: all ease 0.5s;
+}
+::selection{
+    color: #121212;
+    background-color:white;
+}
+.nav-2,
+.menu-icon,
+.menu-btn{
+    display: none;
+}
+@media(max-width:1000px){
+    #navigation{
+        padding: 30px;
+    }
+    #navigation .menu,
+    #navigation .sign-up-btn{
+        display: none;
+    }
+    .menu-icon{
+        display: block;
+    }
+    nav .menu-icon{
+        cursor: pointer;
+        float: right;
+        padding: 5px;
+        position: relative;
+        user-select: none;
+        z-index: 2;
+    }
+    nav .menu-icon .nav-icon{
+        background-color:black;
+        display: block;
+        height: 2px;
+        position: relative;
+        transition: background 0.2s ease-out;
+        width: 25px;
+    }
+    nav .menu-icon .nav-icon:before,
+    nav .menu-icon .nav-icon:after{
+        background-color:black;
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        transition: all ease-out 0.2s;
+        width: 100%;
+    }
+    nav .menu-icon .nav-icon:before{
+        top: 5px;
+    }
+    nav .menu-icon .nav-icon:after{
+        top: -5px;
+    }
+    nav .menu-icon .nav-icon,
+    nav .menu-icon:checked ~ .menu-icon .nav-icon{
+        background-color: transparent;
+    }
+    nav .menu-btn:checked ~ .menu-icon .nav-icon:before{
+        transform: rotate(-45deg);
+        top: 0px;
+    }
+    nav .menu-btn:checked ~ .menu-icon .nav-icon:after{
+        transform: rotate(45deg);
+        top: 0px;
+    }
+    nav .menu-btn{
+        display: none;
+    }
+    .nav-2{
+        display: block;
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        width:100%;
+        height:100%;
+        background:white;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 40px;
+        z-index: 1;
+        display: none;
+        animation: fade 0.3s;
+
+    }
+    .menu-2{
+        margin: 0px;
+        padding: 0px;
+        align-items:center;
+    }
+    
+    .menu-2 li a{
+        color: black;
+        margin: 0px;
+        padding: 20px 0px;
+        font-size: 30px;
+        
+    }
+    .sign-up-btn-2{
+        font-size: 24px;
+    }
+    .sign-up-btn-2 i{
+        font-size: 14px;
+    }
+    nav .menu-btn:checked ~ .nav-2{
+        display: flex;
+    }
+
+}
+@media (max-width:768px){
+    .logo {
+        width:20vw;
+        height:20vw;
+        }
+}
+@media (max-width:320px){
+    .logo {
+        width:20vw;
+        height:20vw;
+        margin:0px;
+    }
+}
+@keyframes fade{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+/*-----------End of nav bar-----------------------------*/
+header{
+    background-image: url(../images/back_index.jpg);
+    background-position:top-center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width:100%;
+    min-height: 50vw;
+    position:relative;
+    justify-content:center;
+    align-items:center;
+}
+
+/*---------------------box-------------*/
+section
+{
+    padding:40px 25px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+section .intro_box:before{
+    content:'';
+    position:absolute;
+    top:-20px;
+    left:-20px;
+    right:-20px;
+    bottom:-20px;
+    background:url(../images/back_index.jpg);
+    background-attachment:fixed;
+    filter:blur(95px);
+}
+.intro_box{
+    margin-top:10vw;
+    position:relative;
+   max-width:100%;
+    min-height:25vw;
+    padding:5% 5% 10%;
+    box-shadow: 10px 5px 10px black;
+    overflow:hidden;
+    color:black;
+}
+@media screen and (min-width:768px){
+.intro_box{
+    height:20vw;
+}
+}
+.intro_box p{
+    position:relative;
+    margin-top:1vw;
+    padding:0;
+    font-size:25px;
+    z-index:2;
+    font-weight: bold;
+}
+.intro_box p span{
+    position:relative;
+    margin:0;
+    padding:0;
+    font-size:25px;
+    color:red;
+    z-index:2;
+    font-family: 'Viaoda Libre', cursive;
+}
+.intro_box h2{
+    position:relative;
+    margin:0;
+    padding:0;
+    font-size:20px;
+    color:rgb(50, 50, 90);
+    z-index:2;
+    font-family: 'Montserrat', sans-serif;
+}
+/*---------------------button---------------*/
+.btn{
+    max-width:100%;
+    height:5vw;
+    border-radius:8px;
+    background:transparent;
+    position:relative;
+}
+.btn button{
+    
+    position:absolute;
+    max-width:100%;
+    height:50%;
+    font-size:15px;
+    background:white;
+    height:auto;
+    padding-top:5px;
+    padding-bottom:5px;
+    border: 1.5px solid black;
+    border-radius:8px;
+    display:block;
+    color:black;
+    cursor:pointer;
+    transition:all .4s;
+    word-wrap: break-word;
+    z-index:2;
+}
+.btn:hover button{
+    color:white;
+    border:none;
+    background:linear-gradient(to right,red,rgb(119, 29, 44),darkblue);
+}
+/*-------------------CountUp------------------------------*/
+.count{
+    background: black;
+    opacity:0.8;
+    background-position:top-center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width:100%;
+    height: auto;
+    position:relative;
+    justify-content:center;
+    align-items:center;
+}
+.counter-up{
+    background: black  no-repeat;
+    min-height: 50vh;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 0 50px;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  .counter-up::before{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.8);
+  }
+  .counter-up .content{
+    z-index: 1;
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .counter-up .content .box{
+    border: 2px dashed rgba(255,255,255,0.6);
+    width: calc(25% - 30px);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding: 20px;
+  }
+  .content .box .icon{
+    font-size: 48px;
+    color: #e6e6e6;
+  }
+  .content .box .counter{
+    font-size: 50px;
+    font-weight: 500;
+    color: #f2f2f2;
+    font-family: sans-serif;
+  }
+  .content .box .text{
+    font-weight: 400;
+    color: #ccc;
+  }
+  @media screen and (max-width: 1036px) {
+    .counter-up{
+      padding: 50px 50px 0 50px;
+    }
+    .counter-up .content .box{
+      width: calc(50% - 30px);
+      margin-bottom: 50px;
+    }
+  }
+  @media screen and (max-width: 580px) {
+    .counter-up .content .box{
+      width: 100%;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    .wrapper{
+      padding: 20px;
+    }
+    .counter-up{
+      padding: 30px 20px 0 20px;
+    }
+  }
